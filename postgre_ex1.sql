@@ -87,7 +87,25 @@ SELECT * FROM person OFFSET 5; --> wszystkie od 6
 SELECT * FROM person OFFSET 5 FETCH FIRST 5 ROW ONLY;
 
 --primary key
+--join
 
 SELECT first_name, last_name, car.id AS car_info
 FROM person INNER JOIN car
 ON person.car_id = car.id;
+
+SELECT person.first_name, car.make, car.model, car.price
+FROM person
+JOIN car ON person.car_id = car.id;
+
+SELECT * FROM person
+JOIN car ON person.car_id = car.id;
+
+--left join
+SELECT * FROM person 
+LEFT JOIN car ON car.id = person.car_id;
+
+SELECT * FROM person WHERE car_id IS NULL;
+
+SELECT * FROM person 
+LEFT JOIN car ON car.id = person.car_id
+WHERE car.* IS NULL;
