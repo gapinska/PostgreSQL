@@ -88,37 +88,6 @@ SELECT * FROM person OFFSET 5 FETCH FIRST 5 ROW ONLY;
 
 --primary key
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-	
-
-
-
-
-
+SELECT first_name, last_name, car.id AS car_info
+FROM person INNER JOIN car
+ON person.car_id = car.id;
